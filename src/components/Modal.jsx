@@ -15,14 +15,14 @@ const Modal = () => {
   useEffect(() => {
     function handleClickOutside(event) {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setOpen(false);
+        handleClose();
       }
     }
     if (open) {
       document.addEventListener("mousedown", handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
 
