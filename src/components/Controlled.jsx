@@ -23,7 +23,7 @@ const Controlled = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button>Submit</button>
+        <button disabled={!name}>Submit</button>
       </form>
       {/* Uncontrolled */}
       <form className="flex flex-col" onSubmit={handleSubmit1}>
