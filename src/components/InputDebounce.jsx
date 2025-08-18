@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
 import { debounce } from "lodash";
+import React, { useCallback, useEffect, useState } from "react";
 
 const mockApi = (query) => {
-  return new Promise((resolve) => {
+  //   console.log(query);
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // here you can filter any mocked list
-      const data = ["apple", "banana", "orange", "grapes"];
+      const data = ["apple", "orange", "grapes", "gauva", "banana"];
       const result = data.filter((item) =>
         item.toLowerCase().includes(query.toLowerCase())
       );
@@ -19,12 +19,12 @@ const InputDebounce = () => {
   const [results, setResults] = useState([]);
 
   const debounced = useCallback(
-    debounce(async (inputValue) => {
-      if (!inputValue) {
+    debounce(async (query) => {
+      if (!query) {
         setResults([]);
         return;
       }
-      const res = await mockApi(inputValue);
+      const res = await mockApi(query);
       setResults(res);
     }, 800),
     []
@@ -33,7 +33,6 @@ const InputDebounce = () => {
   useEffect(() => {
     debounced(query);
   }, [query]);
-
   return (
     <div>
       <label htmlFor="">Search Input</label>
@@ -44,9 +43,7 @@ const InputDebounce = () => {
       />
       <ul>
         {results.map((item) => (
-          <li className="" key={item}>
-            {item}
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>
