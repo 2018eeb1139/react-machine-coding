@@ -1,6 +1,7 @@
 import "./App.css";
 import Controlled from "./components/Controlled";
 import Counter from "./components/Counter";
+import Debounce from "./components/Debounce";
 import Modal from "./components/Modal";
 import TodoList from "./components/TodoList";
 
@@ -10,7 +11,8 @@ function App() {
       {/* <Counter /> */}
       {/* <TodoList /> */}
       {/* <Modal /> */}
-      <Controlled />
+      {/* <Controlled /> */}
+      <Debounce />
     </div>
   );
 }
