@@ -2,6 +2,7 @@ import "./App.css";
 import Controlled from "./components/Controlled";
 import Counter from "./components/Counter";
 import Debounce from "./components/Debounce";
+import InputDebounce from "./components/InputDebounce";
 import Modal from "./components/Modal";
 import TodoList from "./components/TodoList";
 
@@ -12,7 +13,8 @@ function App() {
       {/* <TodoList /> */}
       {/* <Modal /> */}
       {/* <Controlled /> */}
-      <Debounce />
+      {/* <Debounce /> */}
+      <InputDebounce />
     </div>
   );
 }
