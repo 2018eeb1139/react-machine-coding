@@ -7,6 +7,7 @@ import Dropdown from "./components/Dropdown";
 import InputDebounce from "./components/InputDebounce";
 import Modal from "./components/Modal";
 import TodoList from "./components/TodoList";
+import Tab from "./components/Tab";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -17,8 +18,16 @@ const mockApi = () => {
   });
 };
 
+const tabs = ["Tab1", "Tab2", "Tab3"];
+const content = {
+  Tab1: "Tab1 content1",
+  Tab2: "Tab2 content2",
+  Tab3: "Tab3 content3",
+};
+
 function App() {
   const [items, setItems] = useState([]);
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,6 +42,11 @@ function App() {
   const handleOnSelect = (value) => {
     console.log(value);
   };
+
+  const handleTabSelect = (value) => {
+    // console.log(value);
+    setSelectedTab(value);
+  };
   return (
     <div className="min-h-screen flex justify-center items-center">
       {/* <Counter /> */}
@@ -41,7 +55,16 @@ function App() {
       {/* <Controlled /> */}
       {/* <Debounce /> */}
       {/* <InputDebounce /> */}
-      <Dropdown name="fruits" items={items} onSelect={handleOnSelect} />
+      {/* <Dropdown name="fruits" items={items} onSelect={handleOnSelect} /> */}
+      {tabs.map((tab) => (
+        <Tab
+          key={tab}
+          title={tab}
+          onSelect={handleTabSelect}
+          isActive={selectedTab === tab}
+        />
+      ))}
+      {<p>{content[selectedTab]}</p>}
     </div>
   );
 }
