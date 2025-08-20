@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import Controlled from "./components/Controlled";
 import Counter from "./components/Counter";
@@ -8,11 +8,39 @@ import InputDebounce from "./components/InputDebounce";
 import Modal from "./components/Modal";
 import TodoList from "./components/TodoList";
 import Tab from "./components/Tab";
+import Table from "./components/Table";
+import { UserContext } from "./context/UserContext";
+import { UserContextProvider } from "./context/UserContextProvider";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const data = ["apple", "orange", "grapes", "gauva", "banana"];
+      resolve(data);
+    }, 1000);
+  });
+};
+
+const mockUserData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = [
+        {
+          name: "Aman",
+          email: "aman@gmail.com",
+          age: 23,
+        },
+        {
+          name: "Harshit",
+          email: "harshit@gmail.com",
+          age: 24,
+        },
+        {
+          name: "Vivek",
+          email: "vivek@gmail.com",
+          age: 25,
+        },
+      ];
       resolve(data);
     }, 1000);
   });
@@ -28,17 +56,7 @@ const content = {
 function App() {
   const [items, setItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await mockApi();
-        setItems(res);
-      } catch (error) {
-        setItems([]);
-      }
-    };
-    fetchData();
-  }, []);
+
   const handleOnSelect = (value) => {
     console.log(value);
   };
@@ -48,15 +66,16 @@ function App() {
     setSelectedTab(value);
   };
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      {/* <Counter /> */}
-      {/* <TodoList /> */}
-      {/* <Modal /> */}
-      {/* <Controlled /> */}
-      {/* <Debounce /> */}
-      {/* <InputDebounce /> */}
-      {/* <Dropdown name="fruits" items={items} onSelect={handleOnSelect} /> */}
-      {tabs.map((tab) => (
+    <UserContextProvider>
+      <div className="min-h-screen flex justify-center items-center">
+        {/* <Counter /> */}
+        {/* <TodoList /> */}
+        {/* <Modal /> */}
+        {/* <Controlled /> */}
+        {/* <Debounce /> */}
+        {/* <InputDebounce /> */}
+        {/* <Dropdown name="fruits" items={items} onSelect={handleOnSelect} /> */}
+        {/* {tabs.map((tab) => (
         <Tab
           key={tab}
           title={tab}
@@ -64,8 +83,10 @@ function App() {
           isActive={selectedTab === tab}
         />
       ))}
-      {<p>{content[selectedTab]}</p>}
-    </div>
+      {<p>{content[selectedTab]}</p>} */}
+        <Table title="Users" />
+      </div>
+    </UserContextProvider>
   );
 }
 
