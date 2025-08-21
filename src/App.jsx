@@ -11,6 +11,7 @@ import Tab from "./components/Tab";
 import Table from "./components/Table";
 import { UserContext } from "./context/UserContext";
 import { UserContextProvider } from "./context/UserContextProvider";
+import InfiniteScroll from "./components/InfiniteScroll";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -84,7 +85,8 @@ function App() {
         />
       ))}
       {<p>{content[selectedTab]}</p>} */}
-        <Table title="Users" />
+        {/* <Table title="Users" /> */}
+        <InfiniteScroll />
       </div>
     </UserContextProvider>
   );
