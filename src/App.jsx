@@ -12,6 +12,7 @@ import Table from "./components/Table";
 import { UserContext } from "./context/UserContext";
 import { UserContextProvider } from "./context/UserContextProvider";
 import InfiniteScroll from "./components/InfiniteScroll";
+import useCounter from "./hooks/useCounter";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -57,6 +58,7 @@ const content = {
 function App() {
   const [items, setItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const { count, increment, decrement, reset } = useCounter(10);
 
   const handleOnSelect = (value) => {
     console.log(value);
@@ -86,7 +88,12 @@ function App() {
       ))}
       {<p>{content[selectedTab]}</p>} */}
         {/* <Table title="Users" /> */}
-        <InfiniteScroll />
+        {/* <InfiniteScroll /> */}
+
+        {/* <button>{count}</button>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+        <button onClick={reset}>reset</button> */}
       </div>
     </UserContextProvider>
   );
