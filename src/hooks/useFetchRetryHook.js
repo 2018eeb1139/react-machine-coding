@@ -21,7 +21,7 @@ const retry = (callback, retries, delay) => {
         if (retries === 0) {
           reject(err);
         } else {
-          console.log(`Retrying... attempts left: ${retries}`);
+          console.log(`Retrying... ${retries}`);
           setTimeout(() => {
             retry(callback, retries - 1, delay)
               .then(resolve)
