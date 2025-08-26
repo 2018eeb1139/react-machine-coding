@@ -14,6 +14,7 @@ import { UserContextProvider } from "./context/UserContextProvider";
 import InfiniteScroll from "./components/InfiniteScroll";
 import useCounter from "./hooks/useCounter";
 import Stopwatch from "./components/Stopwatch";
+import Countdown from "./components/Countdown";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -95,7 +96,8 @@ function App() {
         <button onClick={increment}>+</button>
         <button onClick={decrement}>-</button>
         <button onClick={reset}>reset</button> */}
-        <Stopwatch />
+        {/* <Stopwatch /> */}
+        <Countdown />
       </div>
     </UserContextProvider>
   );
