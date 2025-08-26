@@ -15,6 +15,7 @@ import InfiniteScroll from "./components/InfiniteScroll";
 import useCounter from "./hooks/useCounter";
 import Stopwatch from "./components/Stopwatch";
 import Countdown from "./components/Countdown";
+import StarRating from "./components/StarRating";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -97,7 +98,8 @@ function App() {
         <button onClick={decrement}>-</button>
         <button onClick={reset}>reset</button> */}
         {/* <Stopwatch /> */}
-        <Countdown />
+        {/* <Countdown /> */}
+        <StarRating startCount={10} />
       </div>
     </UserContextProvider>
   );
