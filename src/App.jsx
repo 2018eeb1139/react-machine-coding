@@ -17,6 +17,7 @@ import Stopwatch from "./components/Stopwatch";
 import Countdown from "./components/Countdown";
 import StarRating from "./components/StarRating";
 import TabForm from "./components/TabForm";
+import ProgressBar from "./components/ProgressBar";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -58,6 +59,7 @@ const content = {
   Tab2: "Tab2 content2",
   Tab3: "Tab3 content3",
 };
+const bars = [5, 25, 50, 75, 100];
 
 function App() {
   const [items, setItems] = useState([]);
@@ -74,7 +76,7 @@ function App() {
   };
   return (
     <UserContextProvider>
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-screen justify-center items-center">
         {/* <Counter /> */}
         {/* <TodoList /> */}
         {/* <Modal /> */}
@@ -101,7 +103,10 @@ function App() {
         {/* <Stopwatch /> */}
         {/* <Countdown /> */}
         {/* <StarRating startCount={10} /> */}
-        <TabForm />
+        {/* <TabForm /> */}
+        {bars.map((value) => (
+          <ProgressBar key={value} progress={value} />
+        ))}
       </div>
     </UserContextProvider>
   );
