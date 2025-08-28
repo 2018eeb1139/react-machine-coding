@@ -66,3 +66,38 @@
 .text {
   visibility: hidden;
 }
+
+.accordion {
+  align-items: center;
+  width: 400px;
+  margin: 1rem;
+}
+
+.accordion-header {
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  font-size: 14px;
+  margin: 0.2rem 0;
+}
+
+.accordion-content.open {
+  max-height: 200px;
+  margin: 0.2rem 0;
+}
