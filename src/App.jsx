@@ -104,9 +104,10 @@ function App() {
         {/* <Countdown /> */}
         {/* <StarRating startCount={10} /> */}
         {/* <TabForm /> */}
-        {bars.map((value) => (
+        {/* {bars.map((value) => (
           <ProgressBar key={value} progress={value} />
-        ))}
+        ))} */}
+        {/* <Toast variant="success" /> */}
       </div>
     </UserContextProvider>
   );

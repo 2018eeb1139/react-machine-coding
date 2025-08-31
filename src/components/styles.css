@@ -142,3 +142,51 @@
 .btn.active {
   background-color: rgba(1, 1, 1, 1);
 }
+
+.toast-container {
+  position: fixed;
+  width: 15rem;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.toast {
+  color: white;
+  margin: 1rem;
+  width: 12rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  animation: slide 1s ease-in;
+  span {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.toast.success {
+  background-color: green;
+}
+
+.toast.error {
+  background-color: red;
+}
+
+.toast.warning {
+  background-color: #ffc107;
+}
+
+.toast.info {
+  background-color: blue;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
