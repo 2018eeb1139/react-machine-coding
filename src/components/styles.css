@@ -1,3 +1,5 @@
+/* Modal */
+
 .button {
   border-radius: 10px;
   border: solid 1px black;
@@ -49,6 +51,7 @@
   text-decoration: underline;
 }
 
+/* Progress */
 .outer {
   margin: 10px 0;
   border: 1px solid;
@@ -67,6 +70,7 @@
   visibility: hidden;
 }
 
+/* accordion */
 .accordion {
   align-items: center;
   width: 400px;
@@ -102,6 +106,7 @@
   margin: 0.2rem 0;
 }
 
+/* OTP */
 .otp-input {
   height: 50px;
   width: 50px;
@@ -142,6 +147,8 @@
 .btn.active {
   background-color: rgba(1, 1, 1, 1);
 }
+
+/* toast */
 
 .toast-container {
   position: fixed;
@@ -189,4 +196,45 @@
   100% {
     transform: translate(0);
   }
+}
+
+/* pagintion */
+
+.container {
+}
+
+.container > h1 {
+  width: 695px;
+  height: 221px;
+  text-align: center;
+}
+
+.post-container {
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post-container > img {
+  height: 180px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination > button {
+  margin: 0 5px;
+}
+
+.pagination > button:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  background-color: black;
+  color: white;
 }
