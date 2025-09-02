@@ -1,30 +1,36 @@
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
-import "../styles.css";
+import React, { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import "./styles.css";
 
-const Accordion = () => {
-  const [open, setOpen] = useState(false);
+function Accordion({ items }) {
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const handleClick = () => {
-    setOpen((prev) => !prev);
+  const handleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
+  return !items || items.length === 0 ? (
+    <div>No items available</div>
+  ) : (
     <div className="accordion">
-      <div className={`accordion-header underline`} onClick={handleClick}>
-        Product
-        <ChevronDown className={`${open && "rotate"}`} />
-      </div>
+      {items.map((item, index) => (
+        <div className="accordion-item" key={index}>
+          <button className="accordion-title" onClick={() => handleOpen(index)}>
+            {item.title}
+            {openIndex === index ? (
+              <FaChevronUp className="right" />
+            ) : (
+              <FaChevronDown className="right" />
+            )}
+          </button>
 
-      <div className={`accordion-content ${open ? "open" : ""}`}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, explicabo
-        in. Temporibus, voluptate. Laboriosam sed voluptatibus sequi eaque,
-        earum ea.
-      </div>
-
-      <hr />
+          {openIndex === index && (
+            <div className="accordion-content">{item.content}</div>
+          )}
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default Accordion;
