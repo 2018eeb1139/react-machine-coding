@@ -238,3 +238,46 @@
   background-color: black;
   color: white;
 }
+
+/* chips */
+
+.chips {
+  margin: 20px;
+  text-align: center;
+}
+
+.chips-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.chips-input {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  height: 50px;
+  width: 400px;
+  font-size: x-large;
+  padding-left: 5px;
+}
+
+.chips-container > input:focus {
+  outline: none;
+}
+
+.chips-tags {
+  margin: 5px 5px;
+  padding: 5px 10px;
+  font-size: small;
+  background-color: #ffc107;
+  border-radius: 10px;
+}
+
+.chips-tags > span {
+  color: red;
+  font-size: large;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}

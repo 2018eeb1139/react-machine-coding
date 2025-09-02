@@ -18,6 +18,7 @@ import Countdown from "./components/Countdown";
 import StarRating from "./components/StarRating";
 import TabForm from "./components/TabForm";
 import ProgressBar from "./components/ProgressBar";
+import Chips from "./components/Chips";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -108,6 +109,7 @@ function App() {
           <ProgressBar key={value} progress={value} />
         ))} */}
         {/* <Toast variant="success" /> */}
+        <Chips />
       </div>
     </UserContextProvider>
   );
