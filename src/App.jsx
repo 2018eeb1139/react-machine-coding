@@ -20,6 +20,8 @@ import TabForm from "./components/TabForm";
 import ProgressBar from "./components/ProgressBar";
 import Chips from "./components/Chips";
 import Accordion from "./components/Accordion";
+import FileExplorer from "./components/FileExplorer";
+import data from "../data.json";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -130,7 +132,8 @@ function App() {
         ))} */}
         {/* <Toast variant="success" /> */}
         {/* <Chips /> */}
-        <Accordion items={items} />
+        {/* <Accordion items={items} /> */}
+        <FileExplorer folderData={data} />
       </div>
     </UserContextProvider>
   );

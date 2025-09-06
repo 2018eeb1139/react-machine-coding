@@ -340,3 +340,14 @@
 .right {
   float: right;
 }
+
+/* File Explorer */
+.file-explorer {
+  border-left: 1px solid;
+  padding-left: 0.5rem;
+}
+
+.name {
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
