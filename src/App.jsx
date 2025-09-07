@@ -22,6 +22,7 @@ import Chips from "./components/Chips";
 import Accordion from "./components/Accordion";
 import FileExplorer from "./components/FileExplorer";
 import data from "../data.json";
+import Stepper from "./components/Stepper";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -58,6 +59,7 @@ const mockUserData = () => {
 };
 
 const tabs = ["Tab1", "Tab2", "Tab3"];
+
 const content = {
   Tab1: "Tab1 content1",
   Tab2: "Tab2 content2",
@@ -81,6 +83,29 @@ const items = [
   {
     title: "Full-Stack Development",
     content: "Build full-stack apps with React and Node.js.",
+  },
+];
+
+const steps = [
+  {
+    label: "Personal Info",
+    content: <div>Personal Info Content</div>,
+  },
+  {
+    label: "Contact Info",
+    content: <div>Contact Content</div>,
+  },
+  {
+    label: "Address Info",
+    content: <div>Address Info Content</div>,
+  },
+  {
+    label: "Review Info",
+    content: <div>Review Info Content</div>,
+  },
+  {
+    label: "Completed",
+    content: <div>Completed Content</div>,
   },
 ];
 
@@ -118,7 +143,6 @@ function App() {
       {<p>{content[selectedTab]}</p>} */}
         {/* <Table title="Users" /> */}
         {/* <InfiniteScroll /> */}
-
         {/* <button>{count}</button>
         <button onClick={increment}>+</button>
         <button onClick={decrement}>-</button>
@@ -133,7 +157,8 @@ function App() {
         {/* <Toast variant="success" /> */}
         {/* <Chips /> */}
         {/* <Accordion items={items} /> */}
-        <FileExplorer folderData={data} />
+        {/* <FileExplorer folderData={data} /> */}
+        <Stepper steps={steps} />;
       </div>
     </UserContextProvider>
   );
