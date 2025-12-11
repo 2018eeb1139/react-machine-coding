@@ -109,6 +109,25 @@ const steps = [
   },
 ];
 
+const tabData = [
+  {
+    label: "Profile",
+    content: <div>Profile Content</div>,
+  },
+  {
+    label: "Dashboard",
+    content: <div>Dashboard Content</div>,
+  },
+  {
+    label: "Settings",
+    content: <div>Settings Content</div>,
+  },
+  {
+    label: "Invoice",
+    content: <div>Invoice Content</div>,
+  },
+];
+
 function App() {
   const [items, setItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
@@ -121,6 +140,9 @@ function App() {
   const handleTabSelect = (value) => {
     // console.log(value);
     setSelectedTab(value);
+  };
+  const tabChangeHandler = (idx) => {
+    console.log(idx);
   };
   return (
     <UserContextProvider>
@@ -158,7 +180,8 @@ function App() {
         {/* <Chips /> */}
         {/* <Accordion items={items} /> */}
         {/* <FileExplorer folderData={data} /> */}
-        <Stepper steps={steps} />;
+        {/* <Stepper steps={steps} />; */}
+        {/* <Tabs tabData={tabData} onChange={tabChangeHandler} /> */}
       </div>
     </UserContextProvider>
   );
