@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "ques": "How do I reset my password?",
+      "ans": "Click on the 'Forgot Password' link on the login page and follow the instructions to reset your password."
+    },
+    {
+      "ques": "Can I cancel my order after placing it?",
+      "ans": "Yes, you can cancel your order before it is shipped. Once shipped, cancellations are not allowed."
+    },
+    {
+      "ques": "Do you provide warranty on products?",
+      "ans": "Warranty depends on the product and manufacturer. Please refer to the product page for warranty details."
+    },
+    {
+      "ques": "How long does delivery take?",
+      "ans": "Delivery usually takes 3–7 business days based on your location."
+    },
+    {
+      "ques": "Is cash on delivery available?",
+      "ans": "Yes, cash on delivery is available for selected pin codes and product categories."
+    },
+    {
+      "ques": "How do I update my address?",
+      "ans": "You can update your address from the 'My Account' section under 'Manage Addresses'."
+    },
+    {
+      "ques": "What should I do if I received a damaged product?",
+      "ans": "Please raise a return request within 48 hours of delivery, along with images of the damaged product."
+    },
+    {
+      "ques": "Can I change the delivery date?",
+      "ans": "In most cases, delivery dates are system-generated and cannot be changed manually."
+    },
+    {
+      "ques": "Do you offer discounts for bulk purchases?",
+      "ans": "Yes, bulk order discounts are available. Contact our sales team for more details."
+    },
+    {
+      "ques": "How do I apply a promo code?",
+      "ans": "You can apply a promo code during checkout in the 'Apply Coupon' section."
+    }
+  ]
+}

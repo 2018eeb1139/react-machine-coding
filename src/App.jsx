@@ -23,6 +23,8 @@ import Accordion from "./components/Accordion";
 import FileExplorer from "./components/FileExplorer";
 import data from "../data.json";
 import Stepper from "./components/Stepper";
+import data from "./data/faq.json";
+import FAQ from "./components/FAQ";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -182,6 +184,7 @@ function App() {
         {/* <FileExplorer folderData={data} /> */}
         {/* <Stepper steps={steps} />; */}
         {/* <Tabs tabData={tabData} onChange={tabChangeHandler} /> */}
+        <FAQ data={data} />
       </div>
     </UserContextProvider>
   );
