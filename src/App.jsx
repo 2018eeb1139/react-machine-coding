@@ -134,6 +134,14 @@ function App() {
   const [items, setItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const { count, increment, decrement, reset } = useCounter(10);
+  const [isOpen, setIsOpen] = useState(true);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const handleOnSelect = (value) => {
     console.log(value);
@@ -184,7 +192,9 @@ function App() {
         {/* <FileExplorer folderData={data} /> */}
         {/* <Stepper steps={steps} />; */}
         {/* <Tabs tabData={tabData} onChange={tabChangeHandler} /> */}
-        <FAQ data={data} />
+        {/* <FAQ data={data} /> */}
+        <button onClick={openModal}>Open Modal</button>
+        <Modal isOpen={isOpen} closeModal={closeModal} />
       </div>
     </UserContextProvider>
   );

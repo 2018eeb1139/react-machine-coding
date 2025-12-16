@@ -1,36 +1,35 @@
-import { useMemo, useState } from "react";
-import "./styles.css";
+import React, { useState, useMemo } from "react";
 
-export default function App() {
+function CalculateComponent() {
   const [number, setNumber] = useState(1);
   const [count, setCount] = useState(0);
 
+  // An artificially expensive function
   const expensiveCalculation = (num) => {
-    console.log("Calculating....");
-    for (let i = 0; i < 10; i++) {
-      num = num + i;
+    console.log("Calculating...");
+    for (let i = 0; i < 1000000000; i++) {
+      num += 1;
     }
     return num;
   };
 
+  // The value is only recalculated when 'number' changes
   const memoizedValue = useMemo(() => expensiveCalculation(number), [number]);
 
   return (
-    <div className="App">
-      <div className="">
+    <div>
+      <div>
         <input
           type="number"
           value={number}
           onChange={(e) => setNumber(Number(e.target.value))}
         />
-        <p>Expensive Calculation: {memoizedValue}</p>
+        <p>Expensive Calculation Result: {memoizedValue}</p>
       </div>
-      <div className="">
-        <button onClick={() => setCount((c) => c + 1)}>Click Increment</button>
+      <div>
+        <button onClick={() => setCount((c) => c + 1)}>Increment Count</button>
         <p>Count: {count}</p>
       </div>
     </div>
   );
 }
-
-//When you click "Increment Count", the component re-renders, but "Calculating..." is not logged to the console because the useMemo dependencies (number) haven't changed. The memoized value is reused.
