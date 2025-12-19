@@ -23,8 +23,9 @@ import Accordion from "./components/Accordion";
 import FileExplorer from "./components/FileExplorer";
 import data from "../data.json";
 import Stepper from "./components/Stepper";
-import data from "./data/faq.json";
+// import data from "./data/faq.json";
 import FAQ from "./components/FAQ";
+import OTP from "./components/OTP";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -193,8 +194,9 @@ function App() {
         {/* <Stepper steps={steps} />; */}
         {/* <Tabs tabData={tabData} onChange={tabChangeHandler} /> */}
         {/* <FAQ data={data} /> */}
-        <button onClick={openModal}>Open Modal</button>
-        <Modal isOpen={isOpen} closeModal={closeModal} />
+        {/* <button onClick={openModal}>Open Modal</button>
+        <Modal isOpen={isOpen} closeModal={closeModal} /> */}
+        <OTP />
       </div>
     </UserContextProvider>
   );
