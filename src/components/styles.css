@@ -407,3 +407,56 @@
 .active {
   background-color: blue;
 }
+
+/* Stepper2.0 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stepper {
+  margin: 2rem;
+}
+
+.stepper__outer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepper__container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.step__index {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.active {
+  background-color: blue !important;
+}
+
+.step__line {
+  position: absolute;
+  height: 2.5rem;
+  top: 2.5rem;
+  width: 2px;
+  background-color: gray;
+}
+
+.stepper_buttons {
+  display: flex;
+  justify-content: space-between;
+}
