@@ -26,6 +26,7 @@ import Stepper from "./components/Stepper";
 // import data from "./data/faq.json";
 import FAQ from "./components/FAQ";
 import OTP from "./components/OTP";
+import Traffic from "./components/Traffic";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -196,7 +197,8 @@ function App() {
         {/* <FAQ data={data} /> */}
         {/* <button onClick={openModal}>Open Modal</button>
         <Modal isOpen={isOpen} closeModal={closeModal} /> */}
-        <OTP />
+        {/* <OTP /> */}
+        <Traffic />
       </div>
     </UserContextProvider>
   );
