@@ -27,6 +27,7 @@ import Stepper from "./components/Stepper";
 import FAQ from "./components/FAQ";
 import OTP from "./components/OTP";
 import Traffic from "./components/Traffic";
+import DragAndDrop from "./components/DragAndDrop";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -132,6 +133,13 @@ const tabData = [
   },
 ];
 
+const initialData = {
+  Todo: ["Design UI Mockups", "Create API Contracts"],
+  "In Progress": ["Implement Login Flow"],
+  Review: ["Code Review for Dashboard"],
+  Done: ["Project Setup"],
+};
+
 function App() {
   const [items, setItems] = useState([]);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
@@ -198,7 +206,8 @@ function App() {
         {/* <button onClick={openModal}>Open Modal</button>
         <Modal isOpen={isOpen} closeModal={closeModal} /> */}
         {/* <OTP /> */}
-        <Traffic />
+        {/* <Traffic /> */}
+        <DragAndDrop initialState={initialData} />
       </div>
     </UserContextProvider>
   );
