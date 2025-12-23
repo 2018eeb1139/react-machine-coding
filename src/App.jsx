@@ -145,6 +145,7 @@ function App() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const { count, increment, decrement, reset } = useCounter(10);
   const [isOpen, setIsOpen] = useState(true);
+  const [show, setShow] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
@@ -207,7 +208,9 @@ function App() {
         <Modal isOpen={isOpen} closeModal={closeModal} /> */}
         {/* <OTP /> */}
         {/* <Traffic /> */}
-        <DragAndDrop initialState={initialData} />
+        {/* <DragAndDrop initialState={initialData} /> */}
+        {show && <ProgressBar />}
+        <button onClick={() => setShow(!show)}>Toggle</button>
       </div>
     </UserContextProvider>
   );
