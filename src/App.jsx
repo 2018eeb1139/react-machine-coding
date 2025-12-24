@@ -209,8 +209,10 @@ function App() {
         {/* <OTP /> */}
         {/* <Traffic /> */}
         {/* <DragAndDrop initialState={initialData} /> */}
-        {show && <ProgressBar />}
-        <button onClick={() => setShow(!show)}>Toggle</button>
+        {/* {show && <ProgressBar />}
+        <button onClick={() => setShow(!show)}>Toggle</button> */}
+        Typing Effect
+        <TypingEffect text="I am Frontend Developer." delay={100} />
       </div>
     </UserContextProvider>
   );
