@@ -28,6 +28,7 @@ import FAQ from "./components/FAQ";
 import OTP from "./components/OTP";
 import Traffic from "./components/Traffic";
 import DragAndDrop from "./components/DragAndDrop";
+import ImageCarousel from "./components/image-carousel/ImageCarousel";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -211,8 +212,9 @@ function App() {
         {/* <DragAndDrop initialState={initialData} /> */}
         {/* {show && <ProgressBar />}
         <button onClick={() => setShow(!show)}>Toggle</button> */}
-        Typing Effect
-        <TypingEffect text="I am Frontend Developer." delay={100} />
+        {/* Typing Effect
+        <TypingEffect text="I am Frontend Developer." delay={100} /> */}
+        <ImageCarousel />
       </div>
     </UserContextProvider>
   );
