@@ -29,6 +29,7 @@ import OTP from "./components/OTP";
 import Traffic from "./components/Traffic";
 import DragAndDrop from "./components/DragAndDrop";
 import ImageCarousel from "./components/image-carousel/ImageCarousel";
+import Todo from "./components/todo-app/Todo";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -214,7 +215,8 @@ function App() {
         <button onClick={() => setShow(!show)}>Toggle</button> */}
         {/* Typing Effect
         <TypingEffect text="I am Frontend Developer." delay={100} /> */}
-        <ImageCarousel />
+        {/* <ImageCarousel /> */}
+        <Todo />
       </div>
     </UserContextProvider>
   );
