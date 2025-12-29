@@ -11,7 +11,7 @@ import Tab from "./components/Tab";
 import Table from "./components/Table";
 import { UserContext } from "./context/UserContext";
 import { UserContextProvider } from "./context/UserContextProvider";
-import InfiniteScroll from "./components/InfiniteScroll";
+import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
 import useCounter from "./hooks/useCounter";
 import Stopwatch from "./components/Stopwatch";
 import Countdown from "./components/Countdown";
@@ -30,6 +30,7 @@ import Traffic from "./components/Traffic";
 import DragAndDrop from "./components/DragAndDrop";
 import ImageCarousel from "./components/image-carousel/ImageCarousel";
 import Todo from "./components/todo-app/Todo";
+import Calculator from "./components/calculator/Calculator";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -216,7 +217,8 @@ function App() {
         {/* Typing Effect
         <TypingEffect text="I am Frontend Developer." delay={100} /> */}
         {/* <ImageCarousel /> */}
-        <Todo />
+        {/* <Todo /> */}
+        <Calculator />
       </div>
     </UserContextProvider>
   );
