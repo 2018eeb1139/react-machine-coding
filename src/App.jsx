@@ -31,6 +31,7 @@ import DragAndDrop from "./components/DragAndDrop";
 import ImageCarousel from "./components/image-carousel/ImageCarousel";
 import Todo from "./components/todo-app/Todo";
 import Calculator from "./components/calculator/Calculator";
+import EMI from "./components/emi-calculator/EMI";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -218,7 +219,8 @@ function App() {
         <TypingEffect text="I am Frontend Developer." delay={100} /> */}
         {/* <ImageCarousel /> */}
         {/* <Todo /> */}
-        <Calculator />
+        {/* <Calculator /> */}
+        <EMI />
       </div>
     </UserContextProvider>
   );
