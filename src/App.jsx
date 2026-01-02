@@ -32,6 +32,7 @@ import ImageCarousel from "./components/image-carousel/ImageCarousel";
 import Todo from "./components/todo-app/Todo";
 import Calculator from "./components/calculator/Calculator";
 import EMI from "./components/emi-calculator/EMI";
+import Crypto from "./components/crypto-currency-converted/Crypto";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -220,7 +221,8 @@ function App() {
         {/* <ImageCarousel /> */}
         {/* <Todo /> */}
         {/* <Calculator /> */}
-        <EMI />
+        {/* <EMI /> */}
+        <Crypto />
       </div>
     </UserContextProvider>
   );
