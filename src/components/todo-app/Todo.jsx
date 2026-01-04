@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [task, setTask] = useState("");
@@ -6,7 +7,7 @@ export default function Todo() {
     JSON.parse(localStorage.getItem("todos")) || []
   );
   //{value,isCompleted,id:time}
-  console.log(todos);
+  // console.log(todos);
   const handleAdd = () => {
     const newTask = {
       value: task,
@@ -24,20 +25,37 @@ export default function Todo() {
       handleAdd();
     }
   };
-  const handleClose = (id) => {
-    const filteredTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(filteredTodos);
-  };
-  const handleDone = (id) => {
-    // console.log("inside handleDone", id);
-    const newTodos = [...todos];
-    newTodos.forEach((todo) => {
-      if (todo.id === id) {
-        todo.isCompleted = !todo.isCompleted;
-      }
+  const handleClose = useCallback((id) => {
+    setTodos((prevTodos) => {
+      const filteredTodos = prevTodos.filter((todo) => todo.id !== id);
+      return filteredTodos;
     });
-    setTodos(newTodos);
-  };
+  }, []);
+  const handleDone = useCallback((id) => {
+    // console.log("inside handleDone", id);
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isCompleted: !todo.isCompleted };
+        } else {
+          return todo;
+        }
+      });
+    });
+  }, []);
+
+  const handleUpdate = useCallback((id, updatedValue) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, value: updatedValue };
+        } else {
+          return todo;
+        }
+      });
+    });
+  }, []);
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -52,27 +70,12 @@ export default function Todo() {
       <button onClick={handleAdd}>Add Task</button>
       <div className="">
         {todos?.map((todo) => (
-          <div className="" key={todo?.id}>
-            {todo.isCompleted ? (
-              <span style={{ textDecoration: "line-through" }}>
-                {todo.value}
-              </span>
-            ) : (
-              <span>{todo.value}</span>
-            )}
-            <span
-              style={{ marginLeft: "1rem", cursor: "pointer" }}
-              onClick={() => handleDone(todo.id)}
-            >
-              ✅
-            </span>
-            <span
-              style={{ marginLeft: "1rem", cursor: "pointer" }}
-              onClick={() => handleClose(todo.id)}
-            >
-              ❌
-            </span>
-          </div>
+          <TodoItem
+            todo={todo}
+            handleDone={handleDone}
+            handleClose={handleClose}
+            handleUpdate={handleUpdate}
+          />
         ))}
       </div>
     </div>
