@@ -33,6 +33,7 @@ import Todo from "./components/todo-app/Todo";
 import Calculator from "./components/calculator/Calculator";
 import EMI from "./components/emi-calculator/EMI";
 import Crypto from "./components/crypto-currency-converted/Crypto";
+import MemoryGame from "./components/memory-game/MemoryGame";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -222,7 +223,8 @@ function App() {
         {/* <Todo /> */}
         {/* <Calculator /> */}
         {/* <EMI /> */}
-        <Crypto />
+        {/* <Crypto /> */}
+        <MemoryGame />
       </div>
     </UserContextProvider>
   );
