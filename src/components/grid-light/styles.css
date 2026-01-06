@@ -1,0 +1,25 @@
+.container {
+}
+
+.row-container {
+  gap: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+}
+.col-container {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.on {
+  background-color: orange;
+}
+.off {
+  background-color: red;
+}
+.active {
+  background-color: blueviolet;
+}

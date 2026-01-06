@@ -34,6 +34,7 @@ import Calculator from "./components/calculator/Calculator";
 import EMI from "./components/emi-calculator/EMI";
 import Crypto from "./components/crypto-currency-converted/Crypto";
 import MemoryGame from "./components/memory-game/MemoryGame";
+import GridLight from "./components/grid-light/GridLight";
 
 const mockApi = () => {
   return new Promise((resolve, reject) => {
@@ -224,7 +225,8 @@ function App() {
         {/* <Calculator /> */}
         {/* <EMI /> */}
         {/* <Crypto /> */}
-        <MemoryGame />
+        {/* <MemoryGame /> */}
+        <GridLight />
       </div>
     </UserContextProvider>
   );
