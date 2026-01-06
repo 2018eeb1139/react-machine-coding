@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  height: 70vh;
+  width: 100%;
+}
+
+.post-image {
+  height: 100px;
+  width: 100px;
+}

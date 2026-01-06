@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import "./App.css";
 import Controlled from "./components/Controlled";
 import Counter from "./components/Counter";
@@ -36,6 +36,9 @@ import Crypto from "./components/crypto-currency-converted/Crypto";
 import MemoryGame from "./components/memory-game/MemoryGame";
 import GridLight from "./components/grid-light/GridLight";
 
+const HeavyData = React.lazy(() =>
+  import("./components/lazy-loading/HeavyData")
+);
 const mockApi = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -226,7 +229,12 @@ function App() {
         {/* <EMI /> */}
         {/* <Crypto /> */}
         {/* <MemoryGame /> */}
-        <GridLight />
+        {/* <GridLight /> */}
+        <h1>Lazy Loading</h1>
+        <h3>In this page we are showing some heritage places of india</h3>
+        <Suspense fallback={"Please wait while we loading the images..."}>
+          <HeavyData />
+        </Suspense>
       </div>
     </UserContextProvider>
   );
