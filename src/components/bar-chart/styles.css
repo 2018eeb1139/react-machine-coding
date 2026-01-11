@@ -1,0 +1,55 @@
+.App {
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  display: flex;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 70%;
+  width: 50%;
+  position: relative;
+}
+
+.box-y-axis {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: -32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-x-axis {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+.graph {
+  width: 20px;
+  transform: translateX(-50%);
+  background-color: lightseagreen;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.index {
+  position: absolute;
+  bottom: -7%;
+  left: 45%;
+  align-self: center;
+}
