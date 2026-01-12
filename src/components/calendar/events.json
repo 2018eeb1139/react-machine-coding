@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Morning Meeting",
+    "start": "09:00:00",
+    "end": "10:00:00"
+  },
+  {
+    "id": 2,
+    "title": "Lunch Break",
+    "start": "12:00:00",
+    "end": "13:00:00"
+  },
+
+  {
+    "id": 4,
+    "title": "Client Call",
+    "start": "14:00:00",
+    "end": "15:00:00"
+  },
+  {
+    "id": 5,
+    "title": "Evening Review",
+    "start": "16:00:00",
+    "end": "17:00:00"
+  },
+  {
+    "id": 6,
+    "title": "Project Discussion",
+    "start": "10:00:00",
+    "end": "11:00:00"
+  }
+]
