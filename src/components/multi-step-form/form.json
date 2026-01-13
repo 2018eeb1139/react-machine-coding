@@ -1,0 +1,30 @@
+[
+  {
+    "id": "name",
+    "label": "Name",
+    "inputType": "text",
+    "buttonName": "Next",
+    "placeholder": "Type your name..."
+  },
+  {
+    "id": "email",
+    "label": "Email",
+    "inputType": "email",
+    "buttonName": "Next",
+    "placeholder": "Type your email..."
+  },
+  {
+    "id": "dob",
+    "label": "DOB",
+    "inputType": "date",
+    "buttonName": "Next",
+    "placeholder": ""
+  },
+  {
+    "id": "password",
+    "label": "Password",
+    "inputType": "password",
+    "buttonName": "Submit",
+    "placeholder": ""
+  }
+]
