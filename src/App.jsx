@@ -5,7 +5,7 @@ import Counter from "./components/Counter";
 import Debounce from "./components/Debounce";
 import Dropdown from "./components/Dropdown";
 import InputDebounce from "./components/InputDebounce";
-import Modal from "./components/Modal";
+import Modal from "./components/modals/Modal";
 import TodoList from "./components/TodoList";
 import Tab from "./components/Tab";
 import Table from "./components/Table";
