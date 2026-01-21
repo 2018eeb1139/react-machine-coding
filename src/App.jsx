@@ -1,4 +1,5 @@
-import { Suspense, useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useEffect, useState, lazy } from "react";
+
 import "./App.css";
 import Controlled from "./components/Controlled";
 import Counter from "./components/Counter";
@@ -35,10 +36,9 @@ import EMI from "./components/emi-calculator/EMI";
 import Crypto from "./components/crypto-currency-converted/Crypto";
 import MemoryGame from "./components/memory-game/MemoryGame";
 import GridLight from "./components/grid-light/GridLight";
+import JobBoard from "./components/job-board/JobBoard";
 
-const HeavyData = React.lazy(() =>
-  import("./components/lazy-loading/HeavyData")
-);
+const HeavyData = lazy(() => import("./components/lazy-loading/HeavyData"));
 const mockApi = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -177,7 +177,7 @@ function App() {
   };
   return (
     <UserContextProvider>
-      <div className="min-h-screen justify-center items-center">
+      <div className="">
         {/* <Counter /> */}
         {/* <TodoList /> */}
         {/* <Modal /> */}
@@ -230,11 +230,12 @@ function App() {
         {/* <Crypto /> */}
         {/* <MemoryGame /> */}
         {/* <GridLight /> */}
-        <h1>Lazy Loading</h1>
+        {/* <h1>Lazy Loading</h1>
         <h3>In this page we are showing some heritage places of india</h3>
         <Suspense fallback={"Please wait while we loading the images..."}>
           <HeavyData />
-        </Suspense>
+        </Suspense> */}
+        <JobBoard />
       </div>
     </UserContextProvider>
   );
