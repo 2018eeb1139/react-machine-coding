@@ -1,0 +1,78 @@
+.container {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-family: sans-serif;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropzone {
+  border: 1px dashed gray;
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+
+.preview {
+  padding: 1.5rem;
+}
+
+.or {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropzone.dragging {
+  border: 1px dashed green;
+  background-color: #f1f1f1;
+}
+
+.browse-btn {
+  background-color: green;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-info {
+  flex: 1;
+}
+
+.file-name {
+  display: block;
+}
+
+.file-size {
+  text-align: left;
+  font-size: 12px;
+  color: gray;
+}
+
+.preview-file {
+  background-color: #f1f1f1;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.preview-btn {
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.preview-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+}
