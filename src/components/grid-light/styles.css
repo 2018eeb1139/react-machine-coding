@@ -23,3 +23,28 @@
 .active {
   background-color: blueviolet;
 }
+
+/* Aman */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  height: 16rem;
+  width: 16rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.cell {
+  height: 5rem;
+  width: 5rem;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.active {
+  background-color: blueviolet;
+}
