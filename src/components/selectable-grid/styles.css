@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  /* background-color: aqua; */
+  gap: 0.1rem;
+}
+
+.cell {
+  border: 1px solid;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+}
