@@ -1,0 +1,27 @@
+.container {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history {
+  margin: 0 auto;
+  min-height: 200px;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.parts {
+  display: flex;
+  justify-content: space-around;
+}
