@@ -1,0 +1,39 @@
+* {
+  font-family: sans-serif;
+}
+
+.story-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 24px;
+}
+
+.add-story {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.story-previewer {
+  border: 2px solid red;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  img {
+    height: 4rem;
+    width: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
