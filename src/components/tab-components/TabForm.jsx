@@ -1,6 +1,6 @@
-import Profile from "./Profile";
-import Interest from "./Interest";
-import Settings from "./Settings";
+import Profile from "../Profile";
+import Interest from "../Interest";
+import Settings from "../Settings";
 import "./styles.css";
 import { useState } from "react";
 

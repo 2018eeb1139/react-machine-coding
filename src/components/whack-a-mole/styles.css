@@ -1,0 +1,26 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 1px;
+}
+
+.cell {
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hammer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
