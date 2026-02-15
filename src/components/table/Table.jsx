@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import "./styles.css";
 
 const mockUserData = () => {
@@ -80,8 +80,8 @@ const Table = ({ title }) => {
     const updatedUser = { name, email, age };
     setUsers(
       users.map((user) =>
-        user.name === selectedUser.name ? updatedUser : user
-      )
+        user.name === selectedUser.name ? updatedUser : user,
+      ),
     );
     setOpen1(false);
     setSelectedUser(null);
