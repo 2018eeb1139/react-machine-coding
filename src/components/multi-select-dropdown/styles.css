@@ -23,7 +23,7 @@
 .trigger {
   border: 2px solid;
   border-radius: 5px;
-  height: 30px;
+  height: auto;
   display: flex;
   align-items: center;
   cursor: pointer;
