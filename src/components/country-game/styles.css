@@ -1,0 +1,45 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.container button {
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  transition: all 0.2 ease-in-out;
+  border-radius: 5px;
+  border: 1px solid #414141;
+
+  cursor: pointer;
+}
+
+.container button:active {
+  transform: scale(0.9);
+}
+
+.container button:hover {
+}
+
+.selected {
+  background-color: #414141;
+  color: white;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+.incorrect {
+  background-color: red;
+  color: white;
+}
