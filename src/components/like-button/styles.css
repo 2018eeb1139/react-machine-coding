@@ -1,0 +1,42 @@
+button {
+  padding: 0.5rem;
+  border-radius: 32px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0.5px solid;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+button:hover {
+  color: red;
+  border: 1px solid red;
+  transition: all 0.1s ease-in;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+button.liked {
+  background-color: red;
+  color: white;
+}
+
+.loader {
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
