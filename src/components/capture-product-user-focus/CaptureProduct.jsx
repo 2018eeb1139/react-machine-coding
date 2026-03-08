@@ -1,43 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.css";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const handleScroll = () => {};
 
-    document.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const visibleItemsRef = useRef(new Set());
+  const debounceTimer = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (params) => {
-        params.forEach((param) => {
-          if (param.isIntersecting) {
-            // console.log(param.target.innerText);
-            setProducts((prev) => {
-              if (prev.includes(param.target.innerText)) return prev;
-              return [...prev, param.target.innerText];
-            });
+      (entries) => {
+        entries.forEach((entry) => {
+          const value = entry.target.innerText;
+
+          if (entry.isIntersecting) {
+            visibleItemsRef.current.add(value);
+          } else {
+            visibleItemsRef.current.delete(value);
           }
         });
+
+        // debounce logic
+        if (debounceTimer.current) {
+          clearTimeout(debounceTimer.current);
+        }
+
+        debounceTimer.current = setTimeout(() => {
+          setProducts([...visibleItemsRef.current]);
+        }, 2000);
       },
-      { threshold: 0.5 },
+      { threshold: 0.9 },
     );
 
     const boxes = document.querySelectorAll(".box");
 
-    if (!boxes) {
-      return;
-    }
     boxes.forEach((box) => observer.observe(box));
 
     return () => {
       observer.disconnect();
+      clearTimeout(debounceTimer.current);
     };
   }, []);
 
@@ -45,13 +46,11 @@ export default function App() {
 
   return (
     <div className="container">
-      {Array.from({ length: 27 }, (_, idx) => {
-        return (
-          <div className="box" key={idx + 1}>
-            {idx + 1}
-          </div>
-        );
-      })}
+      {Array.from({ length: 27 }, (_, idx) => (
+        <div className="box" key={idx + 1}>
+          {idx + 1}
+        </div>
+      ))}
     </div>
   );
 }
