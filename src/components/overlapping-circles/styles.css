@@ -1,0 +1,14 @@
+.board-container {
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  cursor: pointer;
+}
+
+.circle {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
