@@ -39,6 +39,17 @@ export default function OTP({ otpLength = 6 }) {
     }
     setOtpFields(copyOtpfields);
   };
+
+  const handlePaste = (e) => {
+    const data = e.clipboardData.getData("text");
+    if (isNaN(data) || data.length !== length) {
+      return;
+    }
+    const pasteCode = data.split("");
+    setOtpFields(pasteCode);
+    ref.current[length - 1].focus();
+  };
+
   return (
     <div className="">
       {otpFields.map((value, index) => (
@@ -48,6 +59,7 @@ export default function OTP({ otpLength = 6 }) {
           ref={(currentInput) => (ref.current[index] = currentInput)}
           value={value}
           onKeyDown={(e) => handleKeyDown(e, index)}
+          onPaste={handlePaste}
         />
       ))}
     </div>
