@@ -9,6 +9,10 @@ export const FileExplorer = ({ data }) => {
     if (isFolder) {
       setShowChildren(!showChildren);
     }
+    const name = folder.name;
+    if (folder.type === "file") {
+      handleSelectedFile(name);
+    }
   };
 
   console.log(data);
