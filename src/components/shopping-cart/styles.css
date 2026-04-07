@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.product,
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+button {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+input {
+  width: 50px;
+}
