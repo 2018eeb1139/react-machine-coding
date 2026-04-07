@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 1rem;
+}
+
+.product {
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.gold {
+  color: gold;
+}
+
+.stepper-container {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.steps {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stepper-label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10rem;
+}
+
+.stepper-number {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 1px solid;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.stepper-line {
+  position: absolute;
+  border: 1px solid black;
+  width: 11rem;
+  top: 1rem;
+  left: 2rem;
+}
+
+.stepper-content {
+  text-align: center;
+}
+
+.stepper-action {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  button {
+    padding: 0.5rem;
+    border: none;
+  }
+  button:active {
+    transform: scale(0.9);
+  }
+}
+
+.active {
+  background-color: blueviolet !important;
+  color: white;
+}
+
+.active-line {
+  border: 1px solid blueviolet;
+}
+
+.toast-container {
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: green;
+  color: white;
+}
