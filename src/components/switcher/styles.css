@@ -1,0 +1,25 @@
+.switch {
+  position: relative;
+  height: 15px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1px;
+  cursor: pointer;
+  span {
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+  }
+}
+
+.switch-button {
+  position: absolute;
+  /* right: 1px; */
+  height: 90%;
+  width: 30%;
+  background: blue;
+  border-radius: 100%;
+  transition: left 0.5 ease;
+}
